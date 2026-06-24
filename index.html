@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bolão Copa 2026 - Plataforma de Palpites</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="header-container">
+      <h1>⚽ Bolão Copa 2026</h1>
+      <div class="status-badge">Painel Administrativo</div>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    
+    <section class="card">
+      <h2 class="card-title">📝 Registrar Novo Palpite</h2>
+      
+      <div class="match-card">
+        <span class="flag">🇧🇷</span>
+        <span class="team-name">Brasil</span>
+        <span class="vs">VS</span>
+        <span class="team-name">França</span>
+        <span class="flag">🇫🇷</span>
+      </div>
+
+      <form id="form-palpite" autocomplete="off">
+        <div class="form-group">
+          <label for="nome-participante">Nome do Participante</label>
+          <input type="text" id="nome-participante" placeholder="Ex: Alex Silva" required>
+        </div>
+
+        <div class="form-group">
+          <label class="center-label">Placar Apostado</label>
+          <div class="score-row">
+            <div class="score-input-wrapper">
+              <span class="subtext">BRA</span>
+              <input type="number" id="placar-a" min="0" value="0" required>
+            </div>
+            <div class="score-divider">×</div>
+            <div class="score-input-wrapper">
+              <span class="subtext">FRA</span>
+              <input type="number" id="placar-b" min="0" value="0" required>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary">Salvar Palpite</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">📊 Palpites Computados</h2>
+      <div id="container-estatisticas" class="stats-list">
+        </div>
+    </section>
+
+  </main>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
