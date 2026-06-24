@@ -287,7 +287,41 @@ input[type="number"]:focus {
   background-color: #dc2626;
 }
 
+/* Painel de gerenciamento adaptável para dedão/mobile */
+.gerenciar-partida {
+  display: flex;
+  flex-direction: column; /* Empilha no celular */
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  background-color: var(--bg-app);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px dashed var(--border-color);
+}
+
+.gerenciar-partida input {
+  width: 100%;
+  padding: 0.6rem; /* Aumenta a área de toque */
+  font-size: 1rem;  /* Evita que o iOS dê zoom automático ao focar no input */
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.btn-secondary {
+  background-color: var(--primary-dark);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem; /* Área de toque ideal para mobile */
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Quando a tela for maior (Desktop), eles voltam a ficar lado a lado */
 /* Painel de gerenciamento de seleções */
+@media (min-width: 480px) {
 .gerenciar-partida {
   display: flex;
   gap: 0.5rem;
@@ -320,5 +354,6 @@ input[type="number"]:focus {
 
 .btn-secondary:hover {
   background-color: #1d447a;
+}
 }
 
