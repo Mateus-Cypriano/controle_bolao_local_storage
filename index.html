@@ -20,12 +20,18 @@
     <section class="card">
       <h2 class="card-title">📝 Registrar Novo Palpite</h2>
       
+      <div class="gerenciar-partida">
+        <input type="text" id="novo-time-a" placeholder="Seleção A (Ex: Argentina)">
+        <input type="text" id="novo-time-b" placeholder="Seleção B (Ex: Holanda)">
+        <button type="button" onclick="alterarSelecoes()" class="btn-secondary">Atualizar Jogo</button>
+      </div>
+
       <div class="match-card">
-        <span class="flag">🇧🇷</span>
-        <span class="team-name">Brasil</span>
+        <span class="flag" id="flag-a">🇧🇷</span>
+        <span class="team-name" id="nome-time-a">Brasil</span>
         <span class="vs">VS</span>
-        <span class="team-name">Escócia</span>
-        <span class="flag">sco</span>
+        <span class="team-name" id="nome-time-b">França</span>
+        <span class="flag" id="flag-b">🇫🇷</span>
       </div>
 
       <form id="form-palpite" autocomplete="off">
@@ -38,12 +44,12 @@
           <label class="center-label">Placar Apostado</label>
           <div class="score-row">
             <div class="score-input-wrapper">
-              <span class="subtext">BRA</span>
+              <span class="subtext label-time-a">BRA</span>
               <input type="number" id="placar-a" min="0" value="0" required>
             </div>
             <div class="score-divider">×</div>
             <div class="score-input-wrapper">
-              <span class="subtext">SCO</span>
+              <span class="subtext label-time-b">FRA</span>
               <input type="number" id="placar-b" min="0" value="0" required>
             </div>
           </div>
@@ -57,11 +63,10 @@
       <h2 class="card-title">📊 Palpites Computados</h2>
       <div id="container-estatisticas" class="stats-list">
         </div>
-  </div>
-
-  <button onclick="limparTodosOsPalpites()" class="btn-danger" style="margin-top: 1.5rem;">
-    🗑️ Limpar Todos os Palpites
-  </button>
+      <button onclick="limparTodosOsPalpites()" class="btn-danger" style="margin-top: 1.5rem;">
+        🗑️ Limpar Todos os Palpites
+      </button>
+    </section>
 
     
 

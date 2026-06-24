@@ -62,16 +62,20 @@ body {
   margin: 2rem auto 0 auto;
   padding: 0 1.5rem;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  align-items: start;
 }
 
 @media (min-width: 768px) {
   .dashboard-container {
-    grid-template-columns: 1fr 1fr;
+    /* Divide em duas colunas de tamanhos iguais (1fr cada) */
+    grid-template-columns: 1fr 1fr; 
+    
+    /* Alinha os cards no topo, impedindo que eles estiquem de forma desalinhada */
+    align-items: start; 
   }
 }
-
 /* Cards Estilizados */
 .card {
   background-color: var(--bg-card);
@@ -282,3 +286,39 @@ input[type="number"]:focus {
 .btn-danger:hover {
   background-color: #dc2626;
 }
+
+/* Painel de gerenciamento de seleções */
+.gerenciar-partida {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  background-color: var(--bg-app);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px dashed var(--border-color);
+}
+
+.gerenciar-partida input {
+  flex: 1;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.btn-secondary {
+  background-color: var(--primary-dark);
+  color: #ffffff;
+  border: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #1d447a;
+}
+
