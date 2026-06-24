@@ -265,3 +265,20 @@ input[type="number"]:focus {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   padding-top: 0.4rem;
 }
+
+.btn-danger {
+  width: 100%;
+  background-color: #ef4444; /* Vermelho moderno */
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+}
