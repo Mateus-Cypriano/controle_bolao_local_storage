@@ -98,6 +98,7 @@ formPalpite.addEventListener('submit', (event) => {
 
   // Inserção no Array de estado da aplicação
   listaDePalpites.push({ usuario, placarA, placarB });
+  
 
   // Sincronização com o LocalStorage
   localStorage.setItem(STORAGE_KEY, JSON.stringify(listaDePalpites));
@@ -107,5 +108,27 @@ formPalpite.addEventListener('submit', (event) => {
   renderizarPainel();
 });
 
+/**
+ * Limpa todos os palpites do LocalStorage e reinicia a tela
+ */
+function limparTodosOsPalpites() {
+  // 1. Confirma se o usuário realmente quer apagar (boa prática)
+  if (confirm("Tem certeza que deseja apagar TODOS os palpites salvos?")) {
+    
+    // 2. Remove a chave do localStorage
+    localStorage.removeItem(STORAGE_KEY);
+    
+    // 3. Zera o array de estado na memória do script
+    listaDePalpites = [];
+    
+    // 4. Atualiza a interface (vai mostrar a mensagem de "Nenhum palpite")
+    renderizarPainel();
+    
+    alert("Palpites limpos com sucesso!");
+  }
+}
+
+const btnLimpar = document.getElementById('btn-limpar');
+btnLimpar.addEventListener('click', limparTodosOsPalpites);
 // Inicialização da interface no carregamento da página
 renderizarPainel();
